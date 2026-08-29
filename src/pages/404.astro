@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Página no encontrada | Brandon Lopez';
+const description = 'La página solicitada no existe en el portafolio de Brandon Lopez.';
+---
+
+<BaseLayout title={title} description={description} noindex={true}>
+  <section class="not-found section">
+    <div class="container narrow">
+      <p class="eyebrow">Error 404</p>
+      <h1>Esta página no está disponible.</h1>
+      <p>La dirección puede haber cambiado o quizá contiene un error.</p>
+      <a class="button" href="/">Volver al inicio</a>
+    </div>
+  </section>
+</BaseLayout>

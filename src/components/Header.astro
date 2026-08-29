@@ -1,0 +1,30 @@
+---
+interface Props {
+  pathname: string;
+}
+
+const { pathname } = Astro.props;
+const onHome = pathname === '/';
+const onPrivacy = pathname.startsWith('/privacidad');
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Brandon Lopez, ir al inicio">
+      <span aria-hidden="true">BL</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li>
+          <a href="/#proyectos" aria-current={onHome ? 'page' : undefined}>Proyectos</a>
+        </li>
+        <li>
+          <a href="/privacidad/" aria-current={onPrivacy ? 'page' : undefined}>Privacidad</a>
+        </li>
+      </ul>
+    </nav>
+    <a class="button button-small" href="mailto:brandon1697@live.com.mx?subject=Oportunidad%20profesional">
+      Hablemos
+    </a>
+  </div>
+</header>

@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+
+const title = 'Brandon Lopez | Ingeniero en Desarrollo de Software';
+const description =
+  'Portafolio de Brandon Lopez, ingeniero de software en Monterrey con experiencia en automatización, Java, Spring, JavaScript, TypeScript y Python.';
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="hero section" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Monterrey · Nuevo León · México</p>
+        <h1 id="hero-title">Software que convierte procesos complejos en soluciones claras.</h1>
+        <p class="hero-intro">
+          Soy <strong>Brandon Mauricio Lopez Canizales</strong>, ingeniero en Desarrollo de
+          Software. Tengo experiencia profesional en automatización y práctica con Java, Spring,
+          JavaScript, TypeScript y Python. Trabajo con un enfoque analítico, cuidadoso y orientado
+          a la calidad.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#proyectos">Explorar proyectos</a>
+          <a class="text-link" href="mailto:brandon1697@live.com.mx?subject=Oportunidad%20profesional">
+            Escribirme por correo <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Perfil profesional">
+        <div class="monogram" aria-hidden="true">BL</div>
+        <div>
+          <p class="hero-card-label">Especialidad</p>
+          <p class="hero-card-title">Ingeniería de software y automatización</p>
+        </div>
+        <dl class="profile-list">
+          <div>
+            <dt>Enfoque</dt>
+            <dd>Calidad y soluciones mantenibles</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>Java · Spring · TypeScript · Python</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section id="proyectos" class="projects section" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Trabajo seleccionado</p>
+          <h2 id="projects-title">Proyectos construidos con intención técnica.</h2>
+        </div>
+        <p>
+          Una selección de sistemas públicos que combina backend, aplicaciones de escritorio,
+          visión por computadora e interfaces operativas.
+        </p>
+      </div>
+      <div class="projects-grid">
+        {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact section" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contact-title">¿Construimos una solución útil?</h2>
+          <p>
+            Estoy abierto a conversar sobre oportunidades de desarrollo de software y
+            automatización. Cuéntame el reto y el contexto por correo.
+          </p>
+        </div>
+        <a class="button button-light" href="mailto:brandon1697@live.com.mx?subject=Oportunidad%20profesional">
+          brandon1697@live.com.mx
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

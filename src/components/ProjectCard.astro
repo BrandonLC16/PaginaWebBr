@@ -1,0 +1,44 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+---
+
+<article class="project-card" aria-labelledby={`project-${project.slug}`}>
+  <div class={`project-visual visual-${(index % 4) + 1}`}>
+    <img
+      src={project.image}
+      alt={project.imageAlt}
+      width="1600"
+      height="900"
+      loading={index === 0 ? 'eager' : 'lazy'}
+      fetchpriority={index === 0 ? 'high' : 'auto'}
+      decoding="async"
+    />
+  </div>
+  <div class="project-content">
+    <div>
+      <p class="project-number" aria-hidden="true">0{index + 1}</p>
+      <h3 id={`project-${project.slug}`}>{project.title}</h3>
+    </div>
+    <p>{project.description}</p>
+    <ul class="tag-list" aria-label={`Tecnologías de ${project.title}`}>
+      {project.technologies.map((technology) => <li>{technology}</li>)}
+    </ul>
+    <a
+      class="project-link"
+      href={project.repositoryUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Ver ${project.title} en GitHub (abre en una pestaña nueva)`}
+    >
+      Ver repositorio
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</article>
