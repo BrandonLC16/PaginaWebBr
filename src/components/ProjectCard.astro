@@ -9,7 +9,10 @@ interface Props {
 const { project, index } = Astro.props;
 ---
 
-<article class="project-card" aria-labelledby={`project-${project.slug}`}>
+<article
+  class:list={['project-card', { 'project-card-featured': Boolean(project.video) }]}
+  aria-labelledby={`project-${project.slug}`}
+>
   <div class={`project-visual visual-${(index % 4) + 1}`}>
     {
       project.video ? (
@@ -19,8 +22,8 @@ const { project, index } = Astro.props;
             playsinline
             preload="none"
             poster={project.image}
-            width="1600"
-            height="900"
+            width={project.imageWidth}
+            height={project.imageHeight}
             aria-label={project.video.label}
           >
             <source src={project.video.src} type="video/mp4" />
@@ -32,8 +35,8 @@ const { project, index } = Astro.props;
         <img
           src={project.image}
           alt={project.imageAlt}
-          width="1600"
-          height="900"
+          width={project.imageWidth}
+          height={project.imageHeight}
           loading="lazy"
           decoding="async"
         />
