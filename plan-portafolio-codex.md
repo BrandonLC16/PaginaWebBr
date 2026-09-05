@@ -51,7 +51,7 @@ Completa esta ficha. Es el único bloqueo real para que Codex produzca contenido
 | Responsable del tratamiento | `{Brandon Mauricio Lopez Canizales}` |
 | Domicilio requerido para el aviso | `{Itrio #339 Solidaridad Monterrey}` |
 | Correo para solicitudes ARCO | `{brandon1697@live.com.mx}` |
-| Dominio deseado | `{www.LCBrandon.com.mx}` |
+| Dominio deseado | `{lcbrandon.com}` |
 
 **Regla:** Codex no debe inventar datos biográficos, funciones de un repositorio ni información legal. Todo campo sin información queda marcado como pendiente y no debe llegar a producción.
 
@@ -283,7 +283,7 @@ Mis datos:
 - Responsable del tratamiento: {Brandon Mauricio Lopez Canizales}
 - Domicilio del responsable: {Itrio 339, Solidaridad, Monterrey}
 - Correo ARCO: {brandon1697@live.com.mx}
-- Dominio: {www.LCBrandon.com.mx}
+- Dominio: {lcbrandon.com}
 
 Antes de editar, inspecciona el repositorio actual. Investiga cada repositorio de proyecto usando README, manifiestos y archivos principales. No inventes características: si algo no puede comprobarse, omítelo o márcalo como pendiente. Reutiliza capturas propias existentes; si no hay una imagen adecuada, crea una composición original coherente con la función del proyecto y guárdala localmente.
 
@@ -383,4 +383,3 @@ Prepara este repositorio para Cloudflare Pages sin convertirlo a SSR. Confirma r
 - [Cámara de Diputados: LFPDPPP vigente](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf)
 - [GitHub: guía rápida para proteger un repositorio](https://docs.github.com/en/code-security/getting-started/quickstart-for-securing-your-repository)
 - [GitHub: actualizaciones de Dependabot](https://docs.github.com/en/code-security/concepts/supply-chain-security/dependabot-version-updates)
-

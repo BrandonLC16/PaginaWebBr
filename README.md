@@ -29,15 +29,16 @@ El sitio solo enlaza a `mailto:` y no recopila información directamente. El avi
 
 El aviso de privacidad requiere revisión jurídica profesional antes de la publicación definitiva. Si en el futuro se añade un formulario, analítica, cookies u otra recopilación, se debe detener el despliegue hasta actualizar el aviso, el consentimiento aplicable y los controles técnicos.
 
-## Despliegue en Cloudflare Pages
+## Despliegue en Cloudflare Workers
 
 - Rama de producción: `main`
 - Comando de compilación: `npm run build`
-- Directorio de salida: `dist`
+- Comando de despliegue: `npx wrangler deploy`
+- Directorio de recursos estáticos: `dist` (declarado en `wrangler.jsonc`)
 - Versión de Node: `24` (declarada en `.node-version`)
 - Variables secretas: ninguna
 
-Después de conectar el repositorio, configura `www.lcbrandon.com.mx` como dominio personalizado, habilita la redirección canónica hacia `www` y revisa que el dominio alternativo y las vistas previas no sean indexables. Comprueba en el sitio publicado HTTPS, los encabezados de `public/_headers`, la consola y Lighthouse antes de considerarlo en producción.
+El Worker debe conservar el nombre `paginawebbr`, porque Cloudflare exige que coincida con `wrangler.jsonc`. Configura `lcbrandon.com` como dominio personalizado, redirige `www` hacia el dominio raíz y revisa que las vistas previas no sean indexables. Comprueba en el sitio publicado HTTPS, los encabezados de `public/_headers`, la consola y Lighthouse antes de considerarlo en producción.
 
 ## Seguridad y mantenimiento
 
