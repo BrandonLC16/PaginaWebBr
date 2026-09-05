@@ -11,22 +11,44 @@ const { project, index } = Astro.props;
 
 <article class="project-card" aria-labelledby={`project-${project.slug}`}>
   <div class={`project-visual visual-${(index % 4) + 1}`}>
-    <img
-      src={project.image}
-      alt={project.imageAlt}
-      width="1600"
-      height="900"
-      loading={index === 0 ? 'eager' : 'lazy'}
-      fetchpriority={index === 0 ? 'high' : 'auto'}
-      decoding="async"
-    />
+    {
+      project.video ? (
+        <>
+          <video
+            controls
+            playsinline
+            preload="none"
+            poster={project.image}
+            width="1600"
+            height="900"
+            aria-label={project.video.label}
+          >
+            <source src={project.video.src} type="video/mp4" />
+            <a href={project.video.src}>Descargar la demostración en video</a>
+          </video>
+          <span class="media-label">Video · 15 s</span>
+        </>
+      ) : (
+        <img
+          src={project.image}
+          alt={project.imageAlt}
+          width="1600"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        />
+      )
+    }
   </div>
   <div class="project-content">
-    <div>
-      <p class="project-number" aria-hidden="true">0{index + 1}</p>
-      <h3 id={`project-${project.slug}`}>{project.title}</h3>
+    <div class="project-heading">
+      <p class="project-focus">{project.focus}</p>
+      <div class="project-title-row">
+        <h3 id={`project-${project.slug}`}>{project.title}</h3>
+        <p class="project-number" aria-hidden="true">0{index + 1}</p>
+      </div>
     </div>
-    <p>{project.description}</p>
+    <p class="project-description">{project.description}</p>
     <ul class="tag-list" aria-label={`Tecnologías de ${project.title}`}>
       {project.technologies.map((technology) => <li>{technology}</li>)}
     </ul>

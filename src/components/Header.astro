@@ -11,12 +11,13 @@ const onPrivacy = pathname.startsWith('/privacidad');
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Brandon Lopez, ir al inicio">
-      <span aria-hidden="true">BL</span>
+      <span class="brand-mark" aria-hidden="true">LC</span>
+      <span class="brand-name" aria-hidden="true">Brandon Lopez</span>
     </a>
     <nav aria-label="Navegación principal">
       <ul class="nav-list">
         <li>
-          <a href="/#proyectos" aria-current={onHome ? 'page' : undefined}>Proyectos</a>
+          <a href="/#proyectos" aria-current={onHome ? 'location' : undefined}>Proyectos</a>
         </li>
         <li>
           <a href="/privacidad/" aria-current={onPrivacy ? 'page' : undefined}>Privacidad</a>

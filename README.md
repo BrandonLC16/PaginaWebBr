@@ -21,7 +21,7 @@ La compilación queda en `dist/`. Las rutas indexables son `/` y `/privacidad/`;
 
 ## Contenido de proyectos
 
-Los datos se centralizan en `src/data/projects.ts`. Las descripciones actuales se redactaron después de revisar, para cada repositorio, su README, manifiesto y archivos principales. Las ilustraciones en `public/images/projects/` son composiciones originales generadas para este portafolio y no representan capturas literales de las aplicaciones.
+Los datos se centralizan en `src/data/projects.ts`. Las descripciones actuales se redactaron después de revisar, para cada repositorio, su README, manifiesto y archivos principales. Los recursos en `public/images/projects/` combinan imágenes asociadas a los proyectos y una demostración local del reconocimiento de señas; las imágenes publicadas se normalizan a WebP de 1600 × 900.
 
 ## Privacidad
 
